@@ -1,7 +1,7 @@
 # MercadoSearch 📱
 ## Resumen 
 
-Esta aplicación está diseñada para explorar productos en MercadoLibre de manera eficiente e intuitiva, siguiendo tanto el estilo visual de MercadoLibre como las guías de diseño de Material Design, e implementando funcionalidades clave para mejorar la experiencia del usuario. Está desarrollada con tecnologías modernas de Android como **Jetpack Compose**, **Hilt**, y **Room**, siguiendo la arquitectura **MVVM** para garantizar escalabilidad y mantenibilidad.
+Esta aplicación está diseñada para explorar productos en **MercadoLibre** de manera eficiente e intuitiva, siguiendo tanto el estilo visual de **MercadoLibre** como las guías de diseño de **Material Design**, e implementando funcionalidades clave para mejorar la experiencia del usuario. Está desarrollada con tecnologías modernas de Android como **Jetpack Compose**, **Hilt**, y **Room**, siguiendo la arquitectura **MVVM** para garantizar escalabilidad y mantenibilidad.
 
 ### Funcionalidades Principales:
 
@@ -24,6 +24,7 @@ Esta aplicación está diseñada para explorar productos en MercadoLibre de mane
 
 ### Aspectos Técnicos:
 
+- **Single Activity**: Utiliza solo un Activity manejando el resto del UI mediante funciones Composables, siendo consistente con las buenas prácticas recomendadas por Android.
 - **Paginación**: Carga progresiva de resultados para optimizar el rendimiento.
 - **Formatter**: Utiliza un formatter para precios y direcciones, adaptádondose a las respuestas proveídas por las APIs públicas, cuyas propiedades a ser utilizadas pueden variar según el endpoint.
 - **Gestión de Estados**: Implementación con `StateFlow` para garantizar una experiencia fluida e intuitiva.
@@ -70,3 +71,4 @@ Estas son algunas funcionalidades y prácticas que se consideran para próximas 
 - Unit tests: Ampliar la cobertura de pruebas unitarias.
 - UI Tests: Añadir pruebas automatizadas para validar interacciones de usuario.
 - Feature: Cart/Checkout: Integrar funcionalidades de carrito y procesos de compra.
+- Modularización: Separar el proyecto en módulos independientes
