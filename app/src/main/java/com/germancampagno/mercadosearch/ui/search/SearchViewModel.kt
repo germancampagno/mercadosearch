@@ -53,7 +53,7 @@ class SearchViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, errorMessage = null) }
             try {
-                val results = if (hasCategory) {
+                val response = if (hasCategory) {
                     repository.searchProductsByCategory(
                         query,
                         _uiState.value.categoryId!!,
@@ -62,12 +62,13 @@ class SearchViewModel @Inject constructor(
                 } else {
                     repository.searchProducts(query, offset = 0)
                 }
-                val formattedResults = formatResults(results)
+                val formattedResults = formatResults(response.results)
                 _uiState.update {
                     it.copy(
                         isLoading = false,
                         searchResults = formattedResults,
-                        currentOffset = formattedResults.size
+                        currentOffset = formattedResults.size,
+                        totalAvailableItems = response.paging.total
                     )
                 }
             } catch (e: Exception) {
@@ -112,7 +113,7 @@ class SearchViewModel @Inject constructor(
                     )
                 }
                 _uiState.update { state ->
-                    val formattedResults = formatResults(newResults)
+                    val formattedResults = formatResults(newResults.results)
                     state.copy(
                         searchResults = state.searchResults + formattedResults,
                         currentOffset = state.searchResults.size + formattedResults.size,
@@ -139,8 +140,8 @@ data class SearchUiState(
     val categoryId: String? = null,
     val searchResults: List<Product> = emptyList(),
     val isLoading: Boolean = false,
-    val isLoadingMore: Boolean = false, // New field for pagination
+    val isLoadingMore: Boolean = false,
     val errorMessage: ErrorMessage? = null,
-    val currentOffset: Int = 0, // Current offset for pagination
-    val totalAvailableItems: Int = Int.MAX_VALUE // Total items available (from API response)
+    val currentOffset: Int = 0,
+    val totalAvailableItems: Int = Int.MAX_VALUE
 )
