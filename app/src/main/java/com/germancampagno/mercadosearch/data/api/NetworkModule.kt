@@ -1,5 +1,6 @@
 package com.germancampagno.mercadosearch.data.api
 
+import com.germancampagno.mercadosearch.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,8 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    // TODO - De-hardcode
-    private const val BASE_URL = "https://api.mercadolibre.com/"
+    private const val BASE_URL = BuildConfig.BASE_URL
 
     @Provides
     @Singleton

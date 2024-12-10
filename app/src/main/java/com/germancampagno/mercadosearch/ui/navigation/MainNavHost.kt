@@ -19,7 +19,7 @@ fun MainNavHost(navController: NavHostController = rememberNavController()) {
             startDestination = Screen.Categories.route,
             modifier = Modifier
         ) {
-            // TODO - Create routes in each screen (see Now in Android project)
+            // TODO - Create routes in each screen
             // Categories Screen (Home)
             composable(route = Screen.Categories.route) {
                 CategoriesScreen(onSearchClick = {
