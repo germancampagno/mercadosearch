@@ -54,11 +54,6 @@ fun CategoriesScreen(
                     id = R.string.top_app_bar_action_icon_description,
                 ),
                 onSearchClick = onSearchClick,
-                onActionClick = {
-                    val videoUrl = "https://youtu.be/dQw4w9WgXcQ?si=YhdJaeQzoaa461Ze"
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl))
-                    context.startActivity(intent)
-                },
             )
         },
         content = { padding ->
