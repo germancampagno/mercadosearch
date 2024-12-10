@@ -1,0 +1,28 @@
+<resources>
+    // App name
+    <string name="app_name">MercadoSearch</string>
+    <string name="mercadolibre">MercadoLibre</string>
+
+    // Generic Top AppBar
+    <string name="top_app_bar_navigation_icon_description">Search</string>
+    <string name="top_app_bar_action_icon_description">Favourites</string>
+    <string name="top_app_bar_back_icon_description">Back</string>
+    <string name="top_app_bar_search_placeholder">Buscar en %1$s</string>
+
+    // Generic strings, useful all around the project
+    <string name="generic_search">Buscar</string>
+    <string name="generic_error_unknown">There has been an unexpected error, please try again</string>
+
+    // Product Detail
+    <string name="product_detail_error_invalid_id">Invalid product ID</string>
+    <string name="product_detail_top_app_bar_title">Detalle del Producto</string>
+    <string name="generic_back">Volver</string>
+    <string name="generic_clear_search">Clear Search</string>
+    <string name="product_condition_new">Nuevo</string>
+    <string name="product_condition_used">Usado</string>
+    <string name="product_detail_cta_buy">Comprar ahora</string>
+    <string name="currency_symbol_ars">$</string>
+    <string name="currency_symbol_usd">US$</string>
+    <string name="product_detail_no_description">Ups, parece que este producto no cuenta con una descripcion aun\n\n\n\n:(</string>
+
+</resources>
