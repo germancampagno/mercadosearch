@@ -30,7 +30,7 @@ class ProductDetailsViewModel @Inject constructor(
         fetchProductDetails(productId)
     }
 
-    @VisibleForTesting
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun fetchProductDetails(productId: String?) {
         viewModelScope.launch {
             if (productId != null) {

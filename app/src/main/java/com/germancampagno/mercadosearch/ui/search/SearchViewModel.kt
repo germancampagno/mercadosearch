@@ -1,5 +1,6 @@
 package com.germancampagno.mercadosearch.ui.search
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -49,6 +50,7 @@ class SearchViewModel @Inject constructor(
         _uiState.update { it.copy(query = newQuery) }
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun searchProducts(query: String) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, errorMessage = null) }
@@ -92,6 +94,7 @@ class SearchViewModel @Inject constructor(
         return formattedResults
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun loadMoreProducts() {
         if (_uiState.value.isLoadingMore || _uiState.value.searchResults.size >= _uiState.value.totalAvailableItems) {
             return

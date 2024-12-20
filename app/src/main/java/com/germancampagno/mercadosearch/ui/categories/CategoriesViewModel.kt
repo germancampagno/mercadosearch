@@ -1,5 +1,6 @@
 package com.germancampagno.mercadosearch.ui.categories
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.germancampagno.mercadosearch.data.model.Category
@@ -25,7 +26,8 @@ class CategoriesViewModel @Inject constructor(
         fetchCategories()
     }
 
-    private fun fetchCategories() {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    fun fetchCategories() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
             try {
