@@ -62,13 +62,13 @@ Aunque esta versión no incluye funcionalidades como favoritos, la estructura es
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android?hl=es-419) - Dependency Injection
 - [Coroutines](https://developer.android.com/kotlin/coroutines) - Async
 - [Coil](https://github.com/coil-kt/coil#jetpack-compose) - Image Loader
+- [Mockito](https://github.com/mockito/mockito) - Unit Testing
 
 # Nice to have 👀
 
 Estas son algunas funcionalidades y prácticas que se consideran para próximas versiones, con el objetivo de expandir la funcionalidad y la calidad del proyecto:
 
 - Lint: Garantizar un código limpio y estandarizado.
-- Unit tests: Ampliar la cobertura de pruebas unitarias.
 - UI Tests: Añadir pruebas automatizadas para validar interacciones de usuario.
 - Feature: Cart/Checkout: Integrar funcionalidades de carrito y procesos de compra.
 - Modularización: Separar el proyecto en módulos independientes
